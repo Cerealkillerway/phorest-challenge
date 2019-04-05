@@ -1,5 +1,12 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<nav class="navbar navbar-dark bg-dark">
+    {{#link-to "index"
+        class="navbar-text"
+    }}
+        {{fa-icon "home" class="left"}}
+        Phorest challenge app
+    {{/link-to}}
+</nav>
 
-{{outlet}}
+<div class="app-body">
+      {{outlet}}
+</div>
