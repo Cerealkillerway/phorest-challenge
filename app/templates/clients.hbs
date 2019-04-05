@@ -1,9 +1,29 @@
-test
+{{#if this.editEvents.showAlert}}
+    {{alert-banner
+        type=this.editEvents.alertType
+        message=this.editEvents.alertMessage
+    }}
+{{/if}}
 
-<ul>
-    {{#each this.model.clients as |client|}}
-        <li>
-            {{client.firstName}} {{client.lastName}} [{{client.id}}]
-        </li>
-    {{/each}}
-</ul>
+{{forms/edit-voucher
+    client=editEvents.currentClient
+}}
+
+{{search-client
+    searchClient=(action "searchClient")
+    undoSearchClient=(action "undoSearchClient")
+}}
+
+<div class="action-description bg-dark">
+      {{fa-icon "info" class="left"}} (click a client in the list below to create a voucher)
+</div>
+
+{{infinite-scroll-list
+    list=this.model.clients
+    paginationInfo=this.paginationInfo
+    loadMore=(action "loadMoreClients")
+    isLoading=this.isLoadingClients
+    class="clients-list"
+    itemComponent="lists/client-line"
+    headers=itemHeaders
+}}

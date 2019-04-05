@@ -1,0 +1,43 @@
+<div class="voucher-editor-header">
+    {{icon-button
+        icon="times"
+        classNames="close-button"
+        onConfirm=(action "closeEditor")
+    }}
+
+    <div class="voucher-editor-title">
+        <div>Creating voucher for:</div>
+        <h2>{{this.client.firstName}} {{this.client.lastName}}</h2>
+    </div>
+</div>
+
+<div class="row">
+      <div class="col-md-6 col-lg-3">
+          <form class="edit-voucher-form">
+              <div class="row">
+                  <div class="col">
+                      <label for="voucher-issue-date">Issue date</label>
+                      <input type="date" class="form-control" id="voucher-issue-date">
+                  </div>
+
+                  <div class="col">
+                      <label for="voucher-expiry-date">Expiry date</label>
+                      <input type="date" class="form-control" id="voucher-expiry-date">
+                  </div>
+              </div>
+              <div class="form-group">
+                    <label for="voucher-amount">Amount</label>
+                    <input type="text" class="form-control" id="voucher-amount" placeholder="amount">
+              </div>
+          </form>
+      </div>
+</div>
+
+<div class="row form-toolbar">
+      <div class="col">
+          <button type="button" class="btn btn-primary" {{action "createVoucher"}}>
+              Create voucher
+              {{fa-icon "shopping-bag" class="right"}}
+          </button>
+      </div>
+</div>

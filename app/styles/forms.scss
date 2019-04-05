@@ -1,0 +1,43 @@
+.search-client-wrapper {
+    padding: 12px 0 42px 40px;
+}
+
+.quake-console {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 35px 56px;
+    z-index: 200;
+    background-color: rgba(33, 33, 33, 0.99);
+    width: 100%;
+    color: $white;
+    border-bottom: solid 7px $primary;
+    display: none;
+
+    .edit-voucher-form {
+        .row {
+            margin-bottom: 15px;
+        }
+    }
+
+    .close-button {
+        background-color: $gray-800;
+        color: $white;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        padding-top: 5px;
+        text-align: center;
+        border-radius: 2px;
+        margin-bottom: 15px;
+        transition: all 0.5s;
+
+        &:hover {
+            background-color: $gray-700;
+        }
+    }
+
+    .form-toolbar {
+        margin-top: 25px;
+    }
+}

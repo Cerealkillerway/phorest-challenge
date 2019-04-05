@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-6 col-lg-3">
+        <h4>Search a client:</h4>
+        <form>
+            <div class="form-group">
+                  <label for="email-search">Email address</label>
+                  <input type="email" class="form-control" id="email-search" placeholder="email to search">
+            </div>
+            <div class="form-group">
+                  <label for="phone-search">Phone number</label>
+                  <input type="text" class="form-control" id="phone-search" placeholder="phone to search">
+            </div>
+        </form>
+
+        <button type="button" class="btn btn-danger" {{action "undoSearch"}}>
+            clear
+            {{fa-icon "times" class="right"}}
+        </button>
+
+        <button type="button" class="btn btn-primary" {{action "search"}}>
+            search
+            {{fa-icon "search" class="right"}}
+        </button>
+    </div>
+</div>

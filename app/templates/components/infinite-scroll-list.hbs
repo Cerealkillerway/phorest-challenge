@@ -1,0 +1,33 @@
+<ul>
+    <li class="header-line">
+        <div class="row">
+            {{#each this.headers as |header|}}
+                <div class="col">
+                      {{header}}
+                </div>
+            {{/each}}
+        </div>
+    </li>
+    {{#each this.list as |listItem|}}
+        <li>
+            {{component
+                this.itemComponent
+                item=listItem
+            }}
+        </li>
+    {{/each}}
+</ul>
+
+{{#if this.isEmpty}}
+    <div class="list-empty bg-dark">
+          No records to show...
+    </div>
+{{/if}}
+
+{{#if this.canLoadMore}}
+    <div class="load-more"></div>
+{{/if}}
+
+{{#if this.isLoading}}
+    {{loading-spinner}}
+{{/if}}
