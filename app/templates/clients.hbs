@@ -1,0 +1,9 @@
+test
+
+<ul>
+    {{#each this.model.clients as |client|}}
+        <li>
+            {{client.firstName}} {{client.lastName}} [{{client.id}}]
+        </li>
+    {{/each}}
+</ul>
